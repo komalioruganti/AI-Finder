@@ -1,7 +1,13 @@
+import { Button } from "@mui/material";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
 const AiToolCard = ({ tool }) => {
   console.log(tool);
+  const navigate = useNavigate();
+  const infoHandler = () => {
+    navigate(`/ai/${tool?.slug}`);
+  };
   return (
     <div
       key={tool.slug}
@@ -25,6 +31,9 @@ const AiToolCard = ({ tool }) => {
             </li>
           ))}
         </ul>
+      </div>
+      <div className="flex justify-center">
+        <Button onClick={infoHandler}>More Info</Button>
       </div>
     </div>
   );
