@@ -1,0 +1,11 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.text {
+  font-size: 72px;
+  background: -webkit-linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
