@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button } from "@material-tailwind/react";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 
@@ -11,21 +11,29 @@ const AiToolCard = ({ tool }) => {
   return (
     <div
       key={tool.slug}
-      className="bg-white shadow-md rounded-md p-4 max-w-[250px] "
+      className="bg-gray-700 shadow-md rounded-md p-4 w-[200px] md:w-[250px] text-white"
     >
       <div className="flex justify-center">
-        <div className="h-32 w-32">
-          <img className="object-cover" src={tool.imageUrl} alt={tool.name} />
+        <div className="h-24 md:h-32 w-24 md:w-32">
+          <img
+            className="h-full w-full object-cover object-center rounded-md"
+            src={tool.image}
+            alt={tool.name}
+          />
         </div>
       </div>
-      <div className="text-gray-800">
-        <h5 className="text-lg font-semibold mb-2">{tool.name}</h5>
-        <p className="mb-2">{tool.description}</p>
-        <ul className="flex flex-wrap mb-4">
+      <div className="mt-2">
+        <h5 className="text-lg font-semibold mb-2 text-center">{tool.name}</h5>
+        <p className="mb-2 font-thin">
+          {tool.description.length > 100
+            ? tool.description.slice(0, 100) + " ... more"
+            : tool.description}
+        </p>
+        <ul className="flex flex-wrap gap-1 mb-4">
           {tool.tags.map((tag) => (
             <li
               key={tag}
-              className="mr-2 mb-2 p-2 rounded-md bg-gray-200 text-gray-700"
+              className="mb-2 text-xs md:text-sm px-2 py-1 rounded-lg bg-gray-200 text-gray-700"
             >
               {tag}
             </li>
@@ -33,7 +41,12 @@ const AiToolCard = ({ tool }) => {
         </ul>
       </div>
       <div className="flex justify-center">
-        <Button onClick={infoHandler}>More Info</Button>
+        <Button
+          onClick={infoHandler}
+          className="bg-blue-700 p-2 text-xs md:text-sm"
+        >
+          More Info
+        </Button>
       </div>
     </div>
   );

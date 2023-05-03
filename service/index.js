@@ -7,7 +7,8 @@ const connectDB = require("./db");
 connectDB();
 app.use(
   cors({
-    origin: "https://main--elaborate-eclair-6eb7bd.netlify.app",
+    origin:"https://main--elaborate-eclair-6eb7bd.netlify.app",
+    // origin:"http://localhost:5173",
     credentials: true,
   })
 );

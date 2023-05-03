@@ -26,7 +26,7 @@ const CardDetail = () => {
   }, [slug]);
 
   return (
-    <div className="container p-2 md:p-5 max-w-[1024px] mx-auto text-white">
+    <div className="container p-2 md:p-5 max-w-[1024px] mx-auto text-white ">
       <div className="flex gap-3 md:gap-8">
         <div className="">
           <div className="h-38 w-36 rounded-xl">
