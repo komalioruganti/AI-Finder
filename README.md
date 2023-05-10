@@ -9,3 +9,6 @@ Follow the instructions to contribute to this project:
     <li> <b> nodemon index.js </b></li>
   </ol>
   </ul>
+To get all the AI Tools use the below routes <br>
+http://localhost:5000/api/getAllAiTools
+ 
